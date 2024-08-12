@@ -1,0 +1,155 @@
+body{
+    background-color:  #352b59;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    position: relative;
+}
+
+.photo{
+    width: 300px;
+    height: 300px; 
+    
+    position: relative;
+
+
+}
+.photo img{
+    max-width: 100%;
+    height: auto;
+    border-radius: 1000px;
+    animation: photoScale 2s ease-out ;
+}
+@keyframes photoScale {
+    0%{
+        transform: scale(2);
+    }
+    100%{
+        transform: scale(1);
+
+    }
+    
+}
+
+.title {
+    position: absolute;
+    color: transparent; 
+    top: 30px;
+    left: 40%;
+    font-size: 30px;
+    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Define your gradient colors */
+    -webkit-background-clip: text; /* Apply gradient to the text */
+    background-clip: text; /* Standard property for background clipping */
+    text-align: center; /* Optional: Center text alignment */
+  
+    z-index: 1;
+    animation: moveDown 2s ease-out;
+}
+.Button {
+    display: inline-block;
+    background: linear-gradient(45deg, #ff6b6b, #f7e967); /* Gradient background */
+    border: none; /* Remove default border */
+    color: white; /* White text color */
+    padding: 15px 30px; /* Padding for size */
+    text-align: center; /* Center text */
+    text-decoration: none; /* Remove underline */
+    font-size: 18px; /* Font size */
+    margin: 10px; /* Margin around the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    transition: all 0.3s ease; /* Smooth transition */
+  
+}
+
+.Button:hover {
+    background: linear-gradient(45deg, #ff6b6b, #f7e967); /* Gradient background on hover */
+    transform: scale(2); /* Slightly enlarge button on hover */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+}
+@keyframes moveRight{
+    0%{
+        transform: translate(-100vw);
+    }
+    100%{
+        transform: translate(0);
+    }
+}
+
+@keyframes moveLeft {
+    0%{
+        transform: translate(100vw);
+    }
+    100%{
+        transform: translate(0);
+    }
+    
+}
+
+@keyframes rotatearound {
+    0%{
+       transform: rotate(0deg); 
+    }
+    100%{
+        transform: rotate(360deg); 
+     }
+    
+}
+@keyframes moveDown {
+    0%{
+        transform: translateY(-100vh);
+    }
+    100%{
+        transform: translateY(0);
+    }
+    
+}
+
+ #personalbtn{
+    position:absolute;
+    top: 200px;
+    left: 300px;
+    animation: moveRight 2s ease-out;
+}
+#skillbtn{
+    position:absolute;
+    top: 300px;
+    left: 270px;
+    animation: moveRight 2s ease-out;
+}
+#projectbtn{
+    position:absolute;
+    top: 400px;
+    left: 200px;
+    animation: moveRight 2s ease-out;
+}
+#experianbtn{
+    position:absolute;
+    top: 200px;
+    right: 300px;
+    animation: moveLeft 2s ease-out;
+}
+#educationbtn{
+    position:absolute;
+    top: 300px;
+    right: 270px;
+    animation: moveLeft 2s ease-out;
+}
+
+#testimontalsbtn{
+    position:absolute;
+    top: 400px;
+    right: 200px;
+    animation: moveLeft 2s ease-out;
+}
+
+#contactbtn{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+

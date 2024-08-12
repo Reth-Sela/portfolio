@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .form-container h1 {
+            margin-top: 0;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-group input[type="submit"] {
+            background-color: #20be5c;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+        .form-group input[type="submit"]:hover {
+            background-color: #1a9a4e;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Contact Us</h1>
+        <form id="contactForm">
+            <!-- Form fields will be injected here by JavaScript -->
+        </form>
+    </div>
+
+    <script>
+        const contactForm = {
+            fields: [
+                { name: "name", type: "text", placeholder: "Your Name", required: true },
+                { name: "email", type: "email", placeholder: "Your Email", required: true },
+                { name: "message", type: "textarea", placeholder: "Your Message", required: true }
+            ]
+        };
+
+        const form = document.getElementById('contactForm');
+
+        contactForm.fields.forEach(field => {
+            const formGroup = document.createElement('div');
+            formGroup.classList.add('form-group');
+
+            const label = document.createElement('label');
+            label.setAttribute('for', field.name);
+            label.textContent = field.placeholder;
+
+            let input;
+            if (field.type === 'textarea') {
+                input = document.createElement('textarea');
+            } else {
+                input = document.createElement('input');
+                input.setAttribute('type', field.type);
+            }
+            input.setAttribute('name', field.name);
+            input.setAttribute('id', field.name);
+            input.setAttribute('placeholder', field.placeholder);
+            if (field.required) {
+                input.setAttribute('required', 'required');
+            }
+
+            formGroup.appendChild(label);
+            formGroup.appendChild(input);
+            form.appendChild(formGroup);
+        });
+
+        // Add submit button
+        const submitButton = document.createElement('input');
+        submitButton.setAttribute('type', 'submit');
+        submitButton.setAttribute('value', 'Send Message');
+        form.appendChild(submitButton);
+    </script>
+</body>
+</html>

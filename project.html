@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>project</title>
+    <style>
+        body{
+            background-color: #E0E0E0;
+        }
+            .container{
+                width:100vw;
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #E0E0E0;
+            }
+            img{
+                width: 500px;
+                height: 300px;
+                border-radius: 10px;
+                margin: 30px;
+            }
+            .project1{
+                display: block;
+                width: 50%;
+                height: 100%;
+            }
+            .project2{
+                display:flex;
+                width: 50%;
+                height: 100%;
+                align-items: end;
+            }
+
+            .photoE{
+                display: flex;
+                justify-content: center;
+                align-items: start;
+                padding-top: 80px;
+            }
+            .photoP{
+                display: flex;
+                justify-content: center;
+                align-items: end;
+                padding-top: 80px;
+            }
+            .descriptionE{
+                display: flex;
+                align-items: center;
+                
+            }
+
+            .desciption{
+            margin-left: 150px;
+            }
+
+            .project-container {
+                display: flex;
+                flex-direction: column;
+                gap: 20px; /* Space between project sections */
+                margin: 20px;
+            }
+            .project {
+                border: 1px solid #ddd;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            }
+            .project h2 {
+                margin: 0;
+                font-size: 24px;
+            }
+            .project p {
+                margin: 10px 0;
+            }
+            .project a {
+                display: block;
+                color: #007BFF;
+                text-decoration: none;
+            }
+            .project a:hover {
+                text-decoration: underline;
+            }
+            
+            
+    </style>
+</head>
+<body>
+    <div class="container">
+         <div class="project1">
+               <div class="photoE">
+                <img src="images/ecomerce.png" alt="">
+               </div>
+               <div class="descriptionE">
+                <div class="desciption" id="descipiton">
+                   
+                </div>
+                
+               </div>
+               
+         </div>
+         <div class="project2">
+            <div class="photoP">
+                <img src="images/portfolio.png" alt="">
+               </div>
+              
+               
+
+         </div>
+    </div>
+    
+<script>
+    const portfolio = {
+             projects: [
+    {
+        title: "E-commerce Platform",
+        description: "A full-featured e-commerce platform with user authentication, product listings, and a shopping cart.",
+        technologies: ["React", "Node.js", "MongoDB"],
+        github: "https://github.com/johndoe/ecommerce-platform",
+        liveDemo: "https://ecommerce.johndoe.dev"
+    },
+    {
+        title: "Portfolio Website",
+        description: "A personal portfolio website showcasing my skills, projects, and contact information.",
+        technologies: ["HTML", "CSS", "JavaScript"],
+        github: "https://github.com/johndoe/portfolio-website",
+        liveDemo: "https://portfolio.johndoe.dev"
+    },
+    // Add more projects as needed
+]
+    }
+
+   
+
+    
+
+
+    const container = document.getElementById('descipiton');
+
+// Loop through each project and create HTML elements
+portfolio.projects.forEach((project, index) => {
+    // Create a new div for each project
+    const projectDiv = document.createElement('div');
+    projectDiv.classList.add('project');
+
+    // Create elements for each property
+    const title = document.createElement('h2');
+    title.textContent = project.title;
+
+    const description = document.createElement('p');
+    description.textContent = project.description;
+
+    const technologies = document.createElement('p');
+    technologies.textContent = `Technologies: ${project.technologies.join(', ')}`;
+
+    const github = document.createElement('a');
+    github.href = project.github;
+    github.textContent = 'GitHub';
+    github.target = '_blank'; // Open in new tab
+
+    const liveDemo = document.createElement('a');
+    liveDemo.href = project.liveDemo;
+    liveDemo.textContent = 'Live Demo';
+    liveDemo.target = '_blank'; // Open in new tab
+
+    // Append elements to the project div
+    projectDiv.appendChild(title);
+    projectDiv.appendChild(description);
+    projectDiv.appendChild(technologies);
+    projectDiv.appendChild(github);
+    projectDiv.appendChild(liveDemo);
+
+    // Append the project div to the container
+    container.appendChild(projectDiv);
+});
+
+
+
+    
+    
+    
+
+   
+</script>    
+</body>
+</html>

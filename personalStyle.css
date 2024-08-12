@@ -1,0 +1,76 @@
+
+body{
+    background-color: #352b59;
+}
+
+.container{
+    position: relative;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+.personaldecription{
+    width: 50%;
+    height: 100vh;
+    display: block;
+    padding-top: 100px;
+    padding-left: 100px;
+}
+.title{
+    position: absolute;
+    top: 20px;
+    left: 40%;
+    color: transparent;
+    background: linear-gradient(to right, #775fff, #feb47b); /* Define your gradient colors */
+    -webkit-background-clip: text; /* Apply gradient to the text */
+    background-clip: text;
+}
+
+.photo{
+    display: flex;
+    width: 40%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    opacity: 100%;
+}
+img{
+    background-size: cover;
+    opacity: 1;
+}
+
+
+p{
+    color: white;
+    font-size: 20px;
+    padding: 5px;
+    animation: toRight 2s ease-in-out;
+}
+.photo img{
+    width: 500px;
+    height: 500px;
+    border-radius: 100px;
+    animation: appear 3s ease-out;
+    
+}
+
+@keyframes toRight
+ {
+0%{
+    transform: translateX(-100vw);
+}    
+100%{
+    transform: translate(0);
+}
+}
+@keyframes appear {
+    0%{
+        opacity: 0;
+        
+    }
+    100%{
+        opacity: 1;
+    }
+    
+}

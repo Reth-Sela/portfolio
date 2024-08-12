@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Experience</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+
+        .container {
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+            
+            background-color: black;
+            background-position: center;
+            background-repeat: no-repeat;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow: auto;
+        }
+
+        .experience {
+            width: 80%;
+            max-width: 1200px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            margin: 10px 0;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .experience h3 {
+            margin-top: 0;
+            font-size: 1.8em;
+            color: #20be5c; /* Accent color */
+            font-weight: bold;
+        }
+
+        .experience p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        .experience .role {
+            font-weight: bold;
+        }
+
+        .experience .duration {
+            color: #e0e0e0;
+        }
+
+        .experience .responsibilities {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="container">
+        <!-- Content will be injected here by JavaScript -->
+    </div>
+
+    <script>
+        const portfolio = {
+            experience: [
+                {
+                    company: "Tech Company Inc.",
+                    role: "Full Stack Developer",
+                    duration: "Jan 2020 - Present",
+                    responsibilities: [
+                        "Developed and maintained web applications using React and Node.js.",
+                        "Collaborated with cross-functional teams to deliver high-quality software.",
+                        "Led the development of a microservices architecture for a large-scale application.",
+                    ],
+                },
+                {
+                    company: "Startup XYZ",
+                    role: "Frontend Developer",
+                    duration: "Jun 2017 - Dec 2019",
+                    responsibilities: [
+                        "Built responsive UI components using React and Bootstrap.",
+                        "Optimized web performance and accessibility.",
+                        "Worked closely with backend developers to integrate APIs.",
+                    ],
+                },
+                // Add more experiences as needed
+            ],
+        };
+
+        const container = document.getElementById('container');
+
+        portfolio.experience.forEach((experience) => {
+            const experienceDiv = document.createElement('div');
+            experienceDiv.classList.add('experience');
+
+            const company = document.createElement('h3');
+            company.textContent = experience.company;
+
+            const role = document.createElement('p');
+            role.textContent = experience.role;
+            role.classList.add('role');
+
+            const duration = document.createElement('p');
+            duration.textContent = experience.duration;
+            duration.classList.add('duration');
+
+            const responsibilities = document.createElement('ul');
+            responsibilities.classList.add('responsibilities');
+            experience.responsibilities.forEach(responsibility => {
+                const listItem = document.createElement('li');
+                listItem.textContent = responsibility;
+                responsibilities.appendChild(listItem);
+            });
+
+            experienceDiv.appendChild(company);
+            experienceDiv.appendChild(role);
+            experienceDiv.appendChild(duration);
+            experienceDiv.appendChild(responsibilities);
+
+            container.appendChild(experienceDiv);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EDUCATION</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        width: 100vw;
+        height: 100vh;
+        background-image: url("images/education.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      .description {
+        background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+        color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 800px;
+        width: 100%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        text-align: center;
+      }
+
+      .description h2 {
+        font-size: 2em;
+        margin-top: 0;
+      }
+
+      .description p {
+        font-size: 1.2em;
+        margin: 10px 0;
+      }
+
+      .description .degree {
+        font-weight: bold;
+      }
+
+      .description .duration {
+        color: #e0e0e0;
+      }
+
+      .description .detail {
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" id="container">
+      <!-- Content will be injected here by JavaScript -->
+    </div>
+
+    <script>
+      const portfolio = {
+        education: [
+          {
+            institution: "University of Technology",
+            degree: "Bachelor of Science in Computer Science",
+            duration: "2013 - 2017",
+            description:
+              "Graduated with honors, with a focus on software engineering and web development.",
+          },
+          // Add more education as needed
+        ],
+      };
+
+      const container = document.getElementById("container");
+
+      portfolio.education.forEach((education) => {
+        const educationDiv = document.createElement("div");
+        educationDiv.classList.add("description");
+
+        const institutionName = document.createElement("h2");
+        institutionName.textContent = education.institution;
+
+        const degree = document.createElement("p");
+        degree.textContent = education.degree;
+        degree.classList.add("degree");
+
+        const duration = document.createElement("p");
+        duration.textContent = education.duration;
+        duration.classList.add("duration");
+
+        const description = document.createElement("p");
+        description.textContent = education.description;
+        description.classList.add("detail");
+
+        educationDiv.appendChild(institutionName);
+        educationDiv.appendChild(degree);
+        educationDiv.appendChild(duration);
+        educationDiv.appendChild(description);
+
+        container.appendChild(educationDiv);
+      });
+    </script>
+  </body>
+</html>
